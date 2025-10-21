@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mishawrnilanthi Selvaraj - Business Analyst Portfolio</title>
+    <title>Mishawrnilanthi Selvaraj | Business Analyst</title>
     <style>
         * {
             margin: 0;
@@ -13,606 +13,1016 @@
         }
 
         :root {
-            --primary: #2563eb;
-            --secondary: #475569;
-            --accent: #0ea5e9;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-            --text-light: #64748b;
-            --border: #e2e8f0;
+            --purple: #7c3aed;
+            --purple-light: #a78bfa;
+            --purple-dark: #5b21b6;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --gray-light: #94a3b8;
+            --bg: #ffffff;
+            --bg-light: #f8fafc;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--text);
+            color: var(--dark);
             background: var(--bg);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Header */
+        /* Header/Hero */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
+            padding: 80px 0 60px;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
         }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
+        .header-left {
+            flex: 1;
+        }
+
+        .header-label {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--purple);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .bio {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 600px;
         }
 
         .contact-links {
             display: flex;
-            gap: 20px;
-            justify-content: center;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
-        .contact-links a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-
-        .contact-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: white;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--card-bg);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 15px;
-        }
-
-        nav a {
-            color: var(--text);
-            text-decoration: none;
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 10px 20px;
-            display: block;
-            transition: color 0.3s;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 0.9rem;
+            transition: all 0.2s;
         }
 
-        nav a:hover {
-            color: var(--primary);
+        .contact-link:hover {
+            border-color: var(--purple);
+            color: var(--purple);
         }
 
-        /* Main Content */
-        main {
-            padding: 40px 0;
-        }
-
-        section {
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--accent);
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: var(--text);
-            margin-bottom: 15px;
-        }
-
-        /* Stats Section */
-        .stats-grid {
+        .header-right {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
         }
 
-        .stat-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
+        .stat {
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 12px;
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary);
             display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--purple);
+            margin-bottom: 4px;
         }
 
         .stat-label {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-top: 5px;
+            font-size: 0.875rem;
+            color: var(--gray);
         }
 
-        /* Portfolio Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
+        /* CV Download Section */
+        .cv-section {
+            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+            padding: 48px 0;
+            margin: 60px 0;
+            border-radius: 16px;
         }
 
-        .portfolio-item {
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .portfolio-header {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+        .cv-content {
+            text-align: center;
             color: white;
-            padding: 20px;
         }
 
-        .portfolio-tag {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 4px 12px;
+        .cv-content h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .cv-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .cv-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--purple);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+        }
+
+        /* Work Grid */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .work-card {
+            background: var(--bg);
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
-            font-size: 0.85rem;
-            margin-bottom: 10px;
+            padding: 32px;
+            transition: all 0.2s;
         }
 
-        .portfolio-content {
-            padding: 20px;
+        .work-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(124, 58, 237, 0.1);
         }
 
-        .portfolio-content ul {
+        .work-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .work-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--purple);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .work-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .work-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .work-list {
             list-style: none;
-            padding-left: 0;
+            margin-bottom: 20px;
         }
 
-        .portfolio-content li {
-            padding: 8px 0;
-            padding-left: 25px;
+        .work-list li {
+            padding: 6px 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+            padding-left: 20px;
             position: relative;
         }
 
-        .portfolio-content li:before {
-            content: "✓";
+        .work-list li::before {
+            content: "→";
             position: absolute;
             left: 0;
-            color: var(--primary);
+            color: var(--purple);
             font-weight: bold;
         }
 
-        .view-btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: var(--primary);
-            color: white;
+        .work-link {
+            color: var(--purple);
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
-        .view-btn:hover {
-            background: var(--accent);
+        .work-link:hover {
+            gap: 8px;
         }
 
-        /* Skills Section */
-        .skills-container {
+        /* Skills Grid */
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 24px;
         }
 
-        .skill-category {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        .skill-card {
+            background: var(--bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 28px;
         }
 
-        .skill-category h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--dark);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .skill-list {
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
 
         .skill-tag {
-            background: var(--bg);
-            padding: 6px 14px;
-            border-radius: 20px;
+            background: var(--bg-light);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding-left: 40px;
+            position: relative;
+            padding-bottom: 40px;
+            border-left: 2px solid #e2e8f0;
+        }
+
+        .timeline-item:last-child {
+            border-left-color: transparent;
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: var(--purple);
+            border-radius: 50%;
+            position: absolute;
+            left: -9px;
+            top: 4px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--purple);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+        }
+
+        .timeline-item li {
+            color: var(--gray);
             font-size: 0.9rem;
-            color: var(--text);
-            border: 1px solid var(--border);
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--purple);
         }
 
         /* Footer */
         footer {
-            background: var(--text);
-            color: white;
+            background: var(--bg-light);
+            padding: 40px 0;
             text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
+            margin-top: 80px;
         }
 
-        .download-section {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 40px 0;
+        footer p {
+            color: var(--gray);
+            font-size: 0.9rem;
         }
 
-        .download-section h3 {
-            margin-bottom: 20px;
-        }
-
-        .download-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-            margin: 5px;
-        }
-
-        .download-btn:hover {
-            background: var(--accent);
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
+            h1 {
                 font-size: 2rem;
             }
 
-            .portfolio-grid {
+            .header-content {
+                flex-direction: column;
+            }
+
+            .header-right {
+                width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .work-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .cv-section {
+                margin: 40px 0;
             }
         }
     </style>
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
-            <h1>Mishawrnilanthi Selvaraj</h1>
-            <p>Technical Business Analyst | Requirements Engineering | Digital Transformation</p>
-            <div class="contact-links">
-                <a href="mailto:Mishawrni.s18@gmail.com">📧 Email</a>
-                <a href="tel:+94769099182">📱 +94 76 909 9182</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener">💼 LinkedIn</a>
-                <a href="https://github.com" target="_blank" rel="noopener">💻 GitHub</a>
+            <div class="header-content">
+                <div class="header-left">
+                    <span class="header-label">BUSINESS ANALYST</span>
+                    <h1>Mishawrnilanthi Selvaraj</h1>
+                    <p class="subtitle">Technical Business Analyst | Digital Transformation</p>
+                    <p class="bio">
+                        Bridging business and technology with 2+ years of experience delivering solutions for
+                        international clients across UK, Japan, Malaysia, and Singapore. Expert in requirements
+                        engineering, process optimization, and Agile delivery with proven measurable business impact.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:Mishawrni.s18@gmail.com" class="contact-link">
+                            📧 Email
+                        </a>
+                        <a href="tel:+94769099182" class="contact-link">
+                            📱 +94 76 909 9182
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="contact-link" rel="noopener">
+                            💼 LinkedIn
+                        </a>
+                        <a href="https://github.com" target="_blank" class="contact-link" rel="noopener">
+                            💻 GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20%</span>
+                        <span class="stat-label">Cycle Time ↓</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">87%</span>
+                        <span class="stat-label">Efficiency ↑</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">UAT Success</span>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main class="container">
-        <section id="overview">
-            <h2>Portfolio Overview</h2>
-            <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px;">
-                Welcome to my Business Analyst portfolio. With 2+ years of progressive experience, I've delivered 20+
-                successful software initiatives,
-                optimized processes to achieve 20% cycle time reduction, and maintained 100% UAT defect closure. This
-                portfolio showcases selected
-                work samples demonstrating my capabilities in requirements engineering, process optimization, and
-                solution design.
-            </p>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">20+</span>
-                    <span class="stat-label">Projects Delivered</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">20%</span>
-                    <span class="stat-label">Cycle Time Reduction</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">87%</span>
-                    <span class="stat-label">Efficiency Improvement</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">UAT Defect Closure</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <h2>Work Samples</h2>
-
-            <div class="portfolio-grid">
-                <!-- Requirements Documentation -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header">
-                        <span class="portfolio-tag">Requirements</span>
-                        <h3>Requirements Documentation</h3>
-                    </div>
-                    <div class="portfolio-content">
-                        <p><strong>Comprehensive BA artifacts from multiple projects</strong></p>
-                        <ul>
-                            <li>Business Requirements Document (BRD)</li>
-                            <li>Software Requirements Specification (SRS)</li>
-                            <li>Functional Requirements (FRS)</li>
-                            <li>User Stories & Acceptance Criteria</li>
-                            <li>Requirements Traceability Matrix</li>
-                            <li>Handover Documentation</li>
-                        </ul>
-                        <a href="#" class="view-btn">View Samples →</a>
-                    </div>
-                </div>
-
-                <!-- Database & Backend -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header">
-                        <span class="portfolio-tag">Technical</span>
-                        <h3>Database & Backend Design</h3>
-                    </div>
-                    <div class="portfolio-content">
-                        <p><strong>Technical architecture and database structuring</strong></p>
-                        <ul>
-                            <li>Database Schema Diagrams (ERD)</li>
-                            <li>Backend API Structure</li>
-                            <li>System Architecture Documentation</li>
-                            <li>Data Flow Diagrams</li>
-                            <li>Technical Specifications</li>
-                        </ul>
-                        <a href="#" class="view-btn">View Samples →</a>
-                    </div>
-                </div>
-
-                <!-- UI/UX Design -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header">
-                        <span class="portfolio-tag">Design</span>
-                        <h3>UI/UX Wireframes & Mockups</h3>
-                    </div>
-                    <div class="portfolio-content">
-                        <p><strong>Figma wireframes and application screenshots</strong></p>
-                        <ul>
-                            <li>Mobile App Wireframes (Figma)</li>
-                            <li>Web Application Mockups</li>
-                            <li>User Flow Diagrams</li>
-                            <li>Application Screenshots</li>
-                            <li>Prototype Demonstrations</li>
-                        </ul>
-                        <a href="#" class="view-btn">View Samples →</a>
-                    </div>
-                </div>
-
-                <!-- Data Reconciliation -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header">
-                        <span class="portfolio-tag">Analytics</span>
-                        <h3>Data Reconciliation Reports</h3>
-                    </div>
-                    <div class="portfolio-content">
-                        <p><strong>Data analysis and reconciliation documentation</strong></p>
-                        <ul>
-                            <li>Reconciliation Dashboard Reports</li>
-                            <li>SQL Query Documentation</li>
-                            <li>Excel Analytics Dashboards</li>
-                            <li>Data Validation Reports (98% accuracy)</li>
-                            <li>Process Automation Case Study</li>
-                        </ul>
-                        <a href="#" class="view-btn">View Samples →</a>
-                    </div>
-                </div>
-
-                <!-- Process Documentation -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header">
-                        <span class="portfolio-tag">Process</span>
-                        <h3>Process Flows & Optimization</h3>
-                    </div>
-                    <div class="portfolio-content">
-                        <p><strong>As-Is/To-Be analysis and workflow diagrams</strong></p>
-                        <ul>
-                            <li>As-Is and To-Be Process Maps</li>
-                            <li>Flowcharts and Swim Lane Diagrams</li>
-                            <li>Process Optimization Case Studies</li>
-                            <li>Workflow Improvement Analysis</li>
-                            <li>Business Process Documentation</li>
-                        </ul>
-                        <a href="#" class="view-btn">View Samples →</a>
-                    </div>
-                </div>
-
-                <!-- Project Case Studies -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header">
-                        <span class="portfolio-tag">Case Studies</span>
-                        <h3>Project Highlights</h3>
-                    </div>
-                    <div class="portfolio-content">
-                        <p><strong>End-to-end project documentation</strong></p>
-                        <ul>
-                            <li>Bootble Fitness App - AI Integration</li>
-                            <li>Thinakkural Website Revamp</li>
-                            <li>Data Reconciliation Automation</li>
-                            <li>AI-Based Mobile App Development</li>
-                            <li>Requirements to Delivery Journey</li>
-                        </ul>
-                        <a href="#" class="view-btn">View Samples →</a>
+    <main>
+        <!-- CV Download Section -->
+        <div class="container">
+            <div class="cv-section">
+                <div class="cv-content">
+                    <h2>📄 Download My CV</h2>
+                    <p>Get the complete overview of my experience, skills, and achievements</p>
+                    <div class="cv-buttons">
+                        <a href="Files/Mishawrnilanthi Selvaraj_Resume.pdf" class="btn btn-white" download>
+                            ⬇️ Download CV (PDF)
+                        </a>
+                        <a href="#experience" class="btn btn-outline">
+                            View Experience →
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <div class="download-section">
-            <h3>📥 Download Complete Portfolio</h3>
-            <p style="margin-bottom: 20px; color: var(--text-light);">
-                Access all documents, case studies, and work samples in one comprehensive package
-            </p>
-            <a href="#" class="download-btn">Download Full Portfolio (PDF)</a>
-            <a href="#" class="download-btn">View Resume</a>
         </div>
 
+        <!-- Portfolio Work -->
+        <section id="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Portfolio & Work Samples</h2>
+                    <p class="section-description">
+                        Selected artifacts from international projects (UK, Japan, Malaysia, Singapore) demonstrating
+                        end-to-end business analysis across requirements, design, data analytics, and process
+                        optimization.
+                    </p>
+                </div>
+
+                <div class="work-grid">
+                    <div class="work-card">
+                        <div class="work-icon">📋</div>
+                        <span class="work-tag">Requirements</span>
+                        <h3>Requirements Documentation</h3>
+                        <p>Comprehensive BA artifacts including BRDs, SRS, user stories, and traceability matrices.</p>
+                        <ul class="work-list">
+                            <li>Business Requirements Documents</li>
+                            <li>Software Requirements Specs</li>
+                            <li>User Stories & Acceptance Criteria</li>
+                            <li>Handover Documentation</li>
+                        </ul>
+                        <a href="#" class="work-link">View Samples →</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">🗄️</div>
+                        <span class="work-tag">Technical</span>
+                        <h3>Database & Backend Design</h3>
+                        <p>ERDs, database schemas, and system architecture documentation for multiple applications.</p>
+                        <ul class="work-list">
+                            <li>Entity Relationship Diagrams</li>
+                            <li>Database Schema Documentation</li>
+                            <li>API Structure & Endpoints</li>
+                            <li>Data Flow Diagrams</li>
+                        </ul>
+                        <a href="#" class="work-link">View Samples →</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">🎨</div>
+                        <span class="work-tag">Design</span>
+                        <h3>UI/UX Wireframes</h3>
+                        <p>Figma wireframes, mockups, and user journey maps demonstrating UX principles.</p>
+                        <ul class="work-list">
+                            <li>Mobile App Wireframes (Figma)</li>
+                            <li>User Flow Diagrams</li>
+                            <li>Interactive Prototypes</li>
+                            <li>Application Screenshots</li>
+                        </ul>
+                        <a href="#" class="work-link">View Samples →</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">📊</div>
+                        <span class="work-tag">Analytics</span>
+                        <h3>Data Reconciliation Reports</h3>
+                        <p>Analytical dashboards and reconciliation reports achieving 98% accuracy (15,000+ records).
+                        </p>
+                        <ul class="work-list">
+                            <li>Excel Analytics Dashboards</li>
+                            <li>Reconciliation Reports (Cointab)</li>
+                            <li>SQL Query Documentation</li>
+                            <li>Automation Case Study (87% efficiency)</li>
+                        </ul>
+                        <a href="#" class="work-link">View Samples →</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">⚙️</div>
+                        <span class="work-tag">Process</span>
+                        <h3>Process Optimization</h3>
+                        <p>As-Is/To-Be analysis and workflow diagrams delivering 20% cycle time reduction.</p>
+                        <ul class="work-list">
+                            <li>As-Is & To-Be Process Maps</li>
+                            <li>Flowcharts & Swim Lanes</li>
+                            <li>Gap Analysis Documentation</li>
+                            <li>Optimization Case Studies</li>
+                        </ul>
+                        <a href="#" class="work-link">View Samples →</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">🚀</div>
+                        <span class="work-tag">Projects</span>
+                        <h3>Case Studies</h3>
+                        <p>End-to-end project documentation from requirements through successful delivery.</p>
+                        <ul class="work-list">
+                            <li>Bootble Fitness App (AI Integration)</li>
+                            <li>Thinakkural Website Revamp</li>
+                            <li>Data Reconciliation Automation</li>
+                            <li>AI-Based Mobile App</li>
+                        </ul>
+                        <a href="#" class="work-link">View Samples →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" style="background: var(--bg-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Work Experience</h2>
+                    <p class="section-description">
+                        Progressive career growth from Mobile Developer to Technical Business Analyst at Ysoft Solution.
+                    </p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">May 2024 – July 2025</div>
+                        <h3>Technical Business Analyst</h3>
+                        <div class="timeline-company">Ysoft Solution | Sri Lanka</div>
+                        <ul>
+                            <li>Led requirements for 15+ software initiatives with comprehensive documentation (SRS,
+                                BRD, user stories)</li>
+                            <li>Collaborated with international clients (UK, Japan, Malaysia, Singapore) on Agile-driven
+                                solutions</li>
+                            <li>Created As-Is/To-Be process maps reducing cycle time by 20%</li>
+                            <li>Conducted competitor analysis reducing rework by 15%</li>
+                            <li>Coordinated UAT phases maintaining 100% defect closure record</li>
+                            <li>Supported sprint planning, backlog grooming, and demo reviews</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Jan 2024 – Apr 2024</div>
+                        <h3>Data Reconciliation Analyst / Junior BA</h3>
+                        <div class="timeline-company">Ysoft Solution | Sri Lanka</div>
+                        <ul>
+                            <li>Managed requirements for 5+ data-driven web applications</li>
+                            <li>Built analytical dashboards processing 10,000+ records monthly (98% accuracy)</li>
+                            <li>Automated reconciliation improving speed and accuracy by 87%</li>
+                            <li>Conducted gap analysis reducing scope changes by 80%</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Jul 2023 – Dec 2023</div>
+                        <h3>Mobile Application Developer (Intern)</h3>
+                        <div class="timeline-company">Ysoft Solution | Sri Lanka</div>
+                        <ul>
+                            <li>Developed cross-platform mobile apps (React Native, Node.js, MongoDB)</li>
+                            <li>Integrated AI-based transcript model achieving 92% accuracy</li>
+                            <li>Assisted in UI/UX improvements and requirements gathering</li>
+                            <li>Supported demos and stakeholder feedback sessions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
         <section id="skills">
-            <h2>Core Skills & Expertise</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>🎯 Business Analysis</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Requirements Elicitation</span>
-                        <span class="skill-tag">SRS/BRD/FRS</span>
-                        <span class="skill-tag">User Stories</span>
-                        <span class="skill-tag">Gap Analysis</span>
-                        <span class="skill-tag">Process Mapping</span>
-                        <span class="skill-tag">UAT</span>
-                        <span class="skill-tag">Traceability Matrix</span>
-                    </div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Expertise</h2>
+                    <p class="section-description">
+                        Comprehensive skill set spanning business analysis, technical tools, and Agile methodologies
+                        with proven success across international markets.
+                    </p>
                 </div>
 
-                <div class="skill-category">
-                    <h3>🛠️ Tools & Platforms</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Jira</span>
-                        <span class="skill-tag">Confluence</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Lucidchart</span>
-                        <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">Cointab</span>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>📝 Business Analysis</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Requirements Elicitation</span>
+                            <span class="skill-tag">SRS/BRD/FRS</span>
+                            <span class="skill-tag">User Stories</span>
+                            <span class="skill-tag">Gap Analysis</span>
+                            <span class="skill-tag">Process Mapping</span>
+                            <span class="skill-tag">UAT</span>
+                            <span class="skill-tag">Traceability Matrix</span>
+                            <span class="skill-tag">Stakeholder Workshops</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="skill-category">
-                    <h3>⚙️ Methodologies</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Agile/Scrum</span>
-                        <span class="skill-tag">Waterfall</span>
-                        <span class="skill-tag">RUP</span>
-                        <span class="skill-tag">Kanban</span>
-                        <span class="skill-tag">Sprint Planning</span>
-                        <span class="skill-tag">Backlog Management</span>
+                    <div class="skill-card">
+                        <h3>🛠️ Tools & Platforms</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">Confluence</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Lucidchart</span>
+                            <span class="skill-tag">Draw.io</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">Cointab</span>
+                            <span class="skill-tag">VS Code</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="skill-category">
-                    <h3>💻 Technical</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">React Native</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">API Testing</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Database Design</span>
-                        <span class="skill-tag">AI/ML Integration</span>
+                    <div class="skill-card">
+                        <h3>🔄 Methodologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Agile/Scrum</span>
+                            <span class="skill-tag">Waterfall</span>
+                            <span class="skill-tag">RUP</span>
+                            <span class="skill-tag">Kanban</span>
+                            <span class="skill-tag">Sprint Planning</span>
+                            <span class="skill-tag">Backlog Management</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>💻 Technical</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">API Testing</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Database Design</span>
+                            <span class="skill-tag">AI/ML Integration</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="achievements">
-            <h2>Key Achievements</h2>
-            <div class="portfolio-grid">
-                <div class="stat-card" style="text-align: left;">
-                    <h3 style="color: var(--primary); margin-bottom: 10px;">Process Optimization</h3>
-                    <p>Reduced process cycle time by <strong>20%</strong> through As-Is/To-Be analysis and workflow
-                        optimization across multiple projects</p>
+        <!-- Education & Research -->
+        <section style="background: var(--bg-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Education & Research</h2>
+                    <p class="section-description">
+                        Academic foundation in ICT with specialized knowledge in Business Analysis, Requirements
+                        Engineering, and AI.
+                    </p>
                 </div>
-                <div class="stat-card" style="text-align: left;">
-                    <h3 style="color: var(--primary); margin-bottom: 10px;">Quality Excellence</h3>
-                    <p>Maintained <strong>100% UAT defect closure</strong> rate across all projects through
-                        comprehensive testing coordination</p>
-                </div>
-                <div class="stat-card" style="text-align: left;">
-                    <h3 style="color: var(--primary); margin-bottom: 10px;">Efficiency Gains</h3>
-                    <p>Achieved <strong>87% efficiency improvement</strong> in data reconciliation through automation
-                        and process redesign</p>
-                </div>
-                <div class="stat-card" style="text-align: left;">
-                    <h3 style="color: var(--primary); margin-bottom: 10px;">Rework Reduction</h3>
-                    <p>Reduced software rework by <strong>15%</strong> through improved requirement traceability and
-                        stakeholder alignment</p>
+
+                <div class="work-grid">
+                    <div class="work-card" style="grid-column: span 2;">
+                        <div class="work-icon">🎓</div>
+                        <span class="work-tag">2019 - 2025</span>
+                        <h3>Bachelor of ICT (Hons) - Information & Communication Technology</h3>
+                        <div class="timeline-company" style="margin-bottom: 16px;">University of Jaffna, Sri Lanka</div>
+                        <p style="margin-bottom: 16px;">Comprehensive curriculum covering business analysis fundamentals
+                            and technical implementation:</p>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                            <div
+                                style="background: var(--bg-light); padding: 12px; border-radius: 8px; border: 1px solid var(--border);">
+                                <strong style="color: var(--purple);">Business Analysis</strong>
+                                <div style="font-size: 0.85rem; color: var(--gray); margin-top: 4px;">Requirements
+                                    Engineering, Strategic Planning</div>
+                            </div>
+                            <div
+                                style="background: var(--bg-light); padding: 12px; border-radius: 8px; border: 1px solid var(--border);">
+                                <strong style="color: var(--purple);">Development</strong>
+                                <div style="font-size: 0.85rem; color: var(--gray); margin-top: 4px;">Software
+                                    Development Models, Applications & Websites</div>
+                            </div>
+                            <div
+                                style="background: var(--bg-light); padding: 12px; border-radius: 8px; border: 1px solid var(--border);">
+                                <strong style="color: var(--purple);">Data & AI</strong>
+                                <div style="font-size: 0.85rem; color: var(--gray); margin-top: 4px;">Data Analytics, AI
+                                    Knowledge</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work-card" style="border: 2px solid var(--purple);">
+                        <div class="work-icon">🔬</div>
+                        <span class="work-tag">Research</span>
+                        <h3>Mango Quality Detection Using AI</h3>
+                        <p style="margin-bottom: 12px;"><strong style="color: var(--purple);">Selected for RCAICT 2025
+                                Conference</strong></p>
+                        <p>Advanced research combining computer vision and data visualization for agricultural quality
+                            assessment:</p>
+                        <ul class="work-list">
+                            <li>AI-powered quality detection model</li>
+                            <li>Data visualization dashboard</li>
+                            <li>Practical application in agriculture sector</li>
+                            <li>Conference presentation ready</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <div
-                style="background: var(--card-bg); padding: 40px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                    I'm always interested in discussing new opportunities, collaborating on challenging projects,
-                    or simply connecting with fellow BA professionals.
-                </p>
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="mailto:Mishawrni.s18@gmail.com" class="download-btn">📧 Email Me</a>
-                    <a href="tel:+94769099182" class="download-btn">📱 Call Me</a>
-                    <a href="#" class="download-btn">💼 LinkedIn</a>
-                    <a href="#" class="download-btn">💻 GitHub</a>
+        <!-- Key Projects -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-description">
+                        End-to-end project delivery demonstrating business analysis, technical implementation, and
+                        measurable outcomes.
+                    </p>
+                </div>
+
+                <div class="work-grid">
+                    <div class="work-card">
+                        <div class="work-icon">🏋️</div>
+                        <span class="work-tag">Sep 2024 - Jul 2025</span>
+                        <h3>Bootble - Fitness Mobile & Web App</h3>
+                        <p>Comprehensive BA engagement for AI-powered fitness platform with international client.</p>
+                        <ul class="work-list">
+                            <li>Requirements gathering & client communication</li>
+                            <li>AI feature coordination (user tracking & coaching)</li>
+                            <li>Development team coordination</li>
+                            <li>API validation in Postman</li>
+                            <li>On-schedule delivery</li>
+                        </ul>
+                        <a href="#" class="work-link">View Case Study →</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">📰</div>
+                        <span class="work-tag">Mar 2025 - Jul 2025</span>
+                        <h3>Thinakkural Website Revamp</h3>
+                        <p>Digital transformation project improving delivery efficiency through structured BA approach.
+                        </p>
+                        <ul class="work-list">
+                            <li>Requirement gathering & issue resolution</li>
+                            <li>SPOC for 25+ requirements</li>
+                            <li>Design-development-client coordination</li>
+                            <li>Roadmap alignment & feature prioritization</li>
+                            <li>15% delivery efficiency improvement</li>
+                        </ul>
+                        <a href="#" class="work-link">View Case Study →</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">📊</div>
+                        <span class="work-tag">Sep 2024 - Jan 2025</span>
+                        <h3>Data Reconciliation Automation</h3>
+                        <p>Process optimization project achieving dramatic efficiency gains through automation.</p>
+                        <ul class="work-list">
+                            <li>Excel/CSV imports & SQL query optimization</li>
+                            <li>Cointab reconciliation tool implementation</li>
+                            <li>15,000+ records automated</li>
+                            <li>98% accuracy achieved</li>
+                            <li>87% speed & accuracy improvement</li>
+                        </ul>
+                        <a href="#" class="work-link">View Case Study →</a>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">🤖</div>
+                        <span class="work-tag">Jul 2023 - Dec 2023</span>
+                        <h3>AI-Based Mobile App Development</h3>
+                        <p>Hands-on development project integrating pre-trained AI models for health monitoring.</p>
+                        <ul class="work-list">
+                            <li>UI component development (React Native)</li>
+                            <li>AI transcript model integration</li>
+                            <li>Face recognition for vital signs</li>
+                            <li>92% accuracy in vital sign estimation</li>
+                            <li>Functional APK delivery to clients</li>
+                        </ul>
+                        <a href="#" class="work-link">View Case Study →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section style="background: var(--bg-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Key Achievements</h2>
+                    <p class="section-description">
+                        Quantifiable business outcomes demonstrating impact across process optimization, quality
+                        assurance, and stakeholder management.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                    <div
+                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">20%</div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Process Cycle Time Reduction
+                        </h3>
+                        <p style="opacity: 0.9; font-size: 0.95rem;">Optimized workflows through comprehensive
+                            As-Is/To-Be analysis and process mapping across multiple projects.</p>
+                    </div>
+
+                    <div
+                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">100%</div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">UAT Defect Closure</h3>
+                        <p style="opacity: 0.9; font-size: 0.95rem;">Maintained perfect defect resolution record through
+                            meticulous UAT coordination and clear acceptance criteria.</p>
+                    </div>
+
+                    <div
+                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">87%</div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Efficiency Improvement</h3>
+                        <p style="opacity: 0.9; font-size: 0.95rem;">Automated data reconciliation processes,
+                            dramatically improving speed and accuracy in report generation.</p>
+                    </div>
+
+                    <div
+                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">15%</div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Rework Reduction</h3>
+                        <p style="opacity: 0.9; font-size: 0.95rem;">Reduced software rework through improved
+                            requirement traceability and stakeholder alignment practices.</p>
+                    </div>
+
+                    <div
+                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">80%</div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Scope Change Reduction</h3>
+                        <p style="opacity: 0.9; font-size: 0.95rem;">Minimized scope changes through comprehensive gap
+                            and process analysis during requirements phase.</p>
+                    </div>
+
+                    <div
+                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">20+</div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Projects Delivered</h3>
+                        <p style="opacity: 0.9; font-size: 0.95rem;">Successfully delivered 20+ product initiatives,
+                            aligning business objectives with technical implementation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- International Experience & Certifications -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">International Experience & Certifications</h2>
+                    <p class="section-description">
+                        Cross-cultural collaboration and professional development through continuous learning.
+                    </p>
+                </div>
+
+                <div class="work-grid">
+                    <div class="work-card">
+                        <div class="work-icon">🌍</div>
+                        <span class="work-tag">Global Clients</span>
+                        <h3>International Collaboration</h3>
+                        <p>Successfully collaborated with clients across multiple regions:</p>
+                        <ul class="work-list">
+                            <li>United Kingdom - Agile solution implementation</li>
+                            <li>Japan - Requirements documentation & analysis</li>
+                            <li>Malaysia - Process optimization projects</li>
+                            <li>Singapore - Digital transformation initiatives</li>
+                        </ul>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">🎓</div>
+                        <span class="work-tag">Professional Development</span>
+                        <h3>Certifications</h3>
+                        <p>Continuous learning through industry-recognized certifications:</p>
+                        <ul class="work-list">
+                            <li>PMP (Project Management Professional) - Udemy</li>
+                            <li>CBAP Preparation</li>
+                            <li>IT Service Management (ITSM) Principles</li>
+                            <li>ITIL Foundation Level 4</li>
+                            <li>Diploma in IT with E-commerce</li>
+                            <li>Java Programming Fundamentals</li>
+                        </ul>
+                    </div>
+
+                    <div class="work-card">
+                        <div class="work-icon">💬</div>
+                        <span class="work-tag">Communication</span>
+                        <h3>Language Proficiency</h3>
+                        <p>Multilingual communication enabling diverse stakeholder engagement:</p>
+                        <ul class="work-list">
+                            <li>English - Professional fluency</li>
+                            <li>Sinhala - Native</li>
+                            <li>Tamil - Native</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Mishawrnilanthi Selvaraj. All rights reserved.</p>
-            <p style="margin-top: 10px; opacity: 0.8;">Technical Business Analyst | Colombo, Sri Lanka</p>
+            <p>© 2025 Mishawrnilanthi Selvaraj. Technical Business Analyst based in Sri Lanka.</p>
+            <p style="margin-top: 8px;">Thalawathugoda, 10116, Sri Lanka</p>
         </div>
     </footer>
 </body>
