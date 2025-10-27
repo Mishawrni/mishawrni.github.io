@@ -301,18 +301,81 @@
             font-weight: bold;
         }
 
-        .work-link {
-            color: var(--purple);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
+        /* Document Links */
+        .doc-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
         }
 
-        .work-link:hover {
+        .doc-link {
+            display: flex;
+            align-items: center;
             gap: 8px;
+            padding: 10px 12px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--purple);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .doc-link:hover {
+            background: var(--purple);
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .doc-icon {
+            font-size: 1rem;
+        }
+
+        /* Screenshot Grid */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .screenshot-item {
+            aspect-ratio: 9/16;
+            background: var(--bg-light);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-light);
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 12px;
         }
 
         /* Skills Grid */
@@ -460,6 +523,10 @@
             .cv-section {
                 margin: 40px 0;
             }
+
+            .screenshot-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -470,7 +537,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="header-left">
-                    <span class="header-label">BUSINESS ANALYST</span>
+                    <span class="header-label">TECHNICAL BUSINESS ANALYST</span>
                     <h1>Mishawrnilanthi Selvaraj</h1>
                     <p class="subtitle">Technical Business Analyst | Digital Transformation</p>
                     <p class="bio">
@@ -485,10 +552,10 @@
                         <a href="tel:+94769099182" class="contact-link">
                             📱 +94 76 909 9182
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="contact-link" rel="noopener">
+                        <a href="https://www.linkedin.com/in/mishawrni-lanthi/" target="_blank" class="contact-link" rel="noopener">
                             💼 LinkedIn
                         </a>
-                        <a href="https://github.com" target="_blank" class="contact-link" rel="noopener">
+                        <a href="https://github.com/Mishawrni" target="_blank" class="contact-link" rel="noopener">
                             💻 GitHub
                         </a>
                     </div>
@@ -526,23 +593,22 @@
                         <a href="Files/Mishawrnilanthi Selvaraj_Resume.pdf" class="btn btn-white" download>
                             ⬇️ Download CV (PDF)
                         </a>
-                        <a href="#experience" class="btn btn-outline">
-                            View Experience →
+                        <a href="#projects" class="btn btn-outline">
+                            View Projects →
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Portfolio Work -->
+        <!-- Portfolio Work (Overview Only) -->
         <section id="portfolio">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Portfolio & Work Samples</h2>
+                    <h2 class="section-title">BA Skills & Deliverables</h2>
                     <p class="section-description">
-                        Selected artifacts from international projects (UK, Japan, Malaysia, Singapore) demonstrating
-                        end-to-end business analysis across requirements, design, data analytics, and process
-                        optimization.
+                        Comprehensive business analysis capabilities demonstrated through documentation, design,
+                        analytics, and process optimization across international projects.
                     </p>
                 </div>
 
@@ -551,480 +617,614 @@
                         <div class="work-icon">📋</div>
                         <span class="work-tag">Requirements</span>
                         <h3>Requirements Documentation</h3>
-                        <p>Comprehensive BA artifacts including BRDs, SRS, user stories, and traceability matrices.</p>
+                        <p>BRDs, SRS, user stories, and traceability matrices for 15+ software initiatives.</p>
                         <ul class="work-list">
                             <li>Business Requirements Documents</li>
-                            <li>Software Requirements Specs</li>
+                            <li>Software Requirements Specifications</li>
                             <li>User Stories & Acceptance Criteria</li>
-                            <li>Handover Documentation</li>
+                            <li>Use Case Documentation</li>
                         </ul>
-                        <a href="#" class="work-link">View Samples →</a>
                     </div>
 
                     <div class="work-card">
                         <div class="work-icon">🗄️</div>
                         <span class="work-tag">Technical</span>
-                        <h3>Database & Backend Design</h3>
-                        <p>ERDs, database schemas, and system architecture documentation for multiple applications.</p>
+                        <h3>Database & System Design</h3>
+                        <p>ERDs, schemas, and architecture documentation demonstrating technical depth.</p>
                         <ul class="work-list">
                             <li>Entity Relationship Diagrams</li>
                             <li>Database Schema Documentation</li>
-                            <li>API Structure & Endpoints</li>
+                            <li>API Structure & Validation</li>
                             <li>Data Flow Diagrams</li>
                         </ul>
-                        <a href="#" class="work-link">View Samples →</a>
                     </div>
 
                     <div class="work-card">
                         <div class="work-icon">🎨</div>
                         <span class="work-tag">Design</span>
-                        <h3>UI/UX Wireframes</h3>
-                        <p>Figma wireframes, mockups, and user journey maps demonstrating UX principles.</p>
+                        <h3>UI/UX Specifications</h3>
+                        <p>Wireframes, mockups, and design systems with detailed specifications.</p>
                         <ul class="work-list">
-                            <li>Mobile App Wireframes (Figma)</li>
-                            <li>User Flow Diagrams</li>
+                            <li>Mobile App UI Designs (Figma)</li>
+                            <li>User Flow & Journey Maps</li>
+                            <li>Design System Documentation</li>
                             <li>Interactive Prototypes</li>
-                            <li>Application Screenshots</li>
                         </ul>
-                        <a href="#" class="work-link">View Samples →</a>
                     </div>
 
                     <div class="work-card">
                         <div class="work-icon">📊</div>
                         <span class="work-tag">Analytics</span>
-                        <h3>Data Reconciliation Reports</h3>
-                        <p>Analytical dashboards and reconciliation reports achieving 98% accuracy (15,000+ records).
-                        </p>
+                        <h3>Data & Analytics</h3>
+                        <p>Dashboards and reconciliation achieving 98% accuracy (15,000+ records).</p>
                         <ul class="work-list">
                             <li>Excel Analytics Dashboards</li>
                             <li>Reconciliation Reports (Cointab)</li>
-                            <li>SQL Query Documentation</li>
-                            <li>Automation Case Study (87% efficiency)</li>
+                            <li>SQL Query Optimization</li>
+                            <li>87% Efficiency Automation</li>
                         </ul>
-                        <a href="#" class="work-link">View Samples →</a>
                     </div>
 
                     <div class="work-card">
                         <div class="work-icon">⚙️</div>
                         <span class="work-tag">Process</span>
                         <h3>Process Optimization</h3>
-                        <p>As-Is/To-Be analysis and workflow diagrams delivering 20% cycle time reduction.</p>
+                        <p>As-Is/To-Be analysis delivering 20% cycle time reduction.</p>
                         <ul class="work-list">
                             <li>As-Is & To-Be Process Maps</li>
-                            <li>Flowcharts & Swim Lanes</li>
+                            <li>Flowcharts & Swim Lane Diagrams</li>
                             <li>Gap Analysis Documentation</li>
-                            <li>Optimization Case Studies</li>
+                            <li>Process Improvement Case Studies</li>
                         </ul>
-                        <a href="#" class="work-link">View Samples →</a>
                     </div>
 
                     <div class="work-card">
-                        <div class="work-icon">🚀</div>
-                        <span class="work-tag">Projects</span>
-                        <h3>Case Studies</h3>
-                        <p>End-to-end project documentation from requirements through successful delivery.</p>
+                        <div class="work-icon">✅</div>
+                        <span class="work-tag">Quality</span>
+                        <h3>UAT & Testing</h3>
+                        <p>Test planning and coordination maintaining 100% defect closure.</p>
                         <ul class="work-list">
-                            <li>Bootble Fitness App (AI Integration)</li>
-                            <li>Thinakkural Website Revamp</li>
-                            <li>Data Reconciliation Automation</li>
-                            <li>AI-Based Mobile App</li>
-                        </ul>
-                        <a href="#" class="work-link">View Samples →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section id="experience" style="background: var(--bg-light);">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Work Experience</h2>
-                    <p class="section-description">
-                        Progressive career growth from Mobile Developer to Technical Business Analyst at Ysoft Solution.
-                    </p>
-                </div>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">May 2024 – July 2025</div>
-                        <h3>Technical Business Analyst</h3>
-                        <div class="timeline-company">Ysoft Solution | Sri Lanka</div>
-                        <ul>
-                            <li>Led requirements for 15+ software initiatives with comprehensive documentation (SRS,
-                                BRD, user stories)</li>
-                            <li>Collaborated with international clients (UK, Japan, Malaysia, Singapore) on Agile-driven
-                                solutions</li>
-                            <li>Created As-Is/To-Be process maps reducing cycle time by 20%</li>
-                            <li>Conducted competitor analysis reducing rework by 15%</li>
-                            <li>Coordinated UAT phases maintaining 100% defect closure record</li>
-                            <li>Supported sprint planning, backlog grooming, and demo reviews</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Jan 2024 – Apr 2024</div>
-                        <h3>Data Reconciliation Analyst / Junior BA</h3>
-                        <div class="timeline-company">Ysoft Solution | Sri Lanka</div>
-                        <ul>
-                            <li>Managed requirements for 5+ data-driven web applications</li>
-                            <li>Built analytical dashboards processing 10,000+ records monthly (98% accuracy)</li>
-                            <li>Automated reconciliation improving speed and accuracy by 87%</li>
-                            <li>Conducted gap analysis reducing scope changes by 80%</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Jul 2023 – Dec 2023</div>
-                        <h3>Mobile Application Developer (Intern)</h3>
-                        <div class="timeline-company">Ysoft Solution | Sri Lanka</div>
-                        <ul>
-                            <li>Developed cross-platform mobile apps (React Native, Node.js, MongoDB)</li>
-                            <li>Integrated AI-based transcript model achieving 92% accuracy</li>
-                            <li>Assisted in UI/UX improvements and requirements gathering</li>
-                            <li>Supported demos and stakeholder feedback sessions</li>
+                            <li>UAT Test Plans & Cases</li>
+                            <li>Acceptance Criteria Definition</li>
+                            <li>API Testing (Postman)</li>
+                            <li>Defect Tracking & Resolution</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills -->
-        <section id="skills">
+        <!-- Featured Projects with Documents -->
+        <section id="projects" style="background: var(--bg-light);">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Skills & Expertise</h2>
+                    <h2 class="section-title">📂 Featured Projects & Documentation</h2>
                     <p class="section-description">
-                        Comprehensive skill set spanning business analysis, technical tools, and Agile methodologies
-                        with proven success across international markets.
+                        End-to-end project documentation showcasing business analysis, technical specs, and deliverables 
                     </p>
                 </div>
-
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>📝 Business Analysis</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Requirements Elicitation</span>
-                            <span class="skill-tag">SRS/BRD/FRS</span>
-                            <span class="skill-tag">User Stories</span>
-                            <span class="skill-tag">Gap Analysis</span>
-                            <span class="skill-tag">Process Mapping</span>
-                            <span class="skill-tag">UAT</span>
-                            <span class="skill-tag">Traceability Matrix</span>
-                            <span class="skill-tag">Stakeholder Workshops</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-card">
-                        <h3>🛠️ Tools & Platforms</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Jira</span>
-                            <span class="skill-tag">Confluence</span>
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">Lucidchart</span>
-                            <span class="skill-tag">Draw.io</span>
-                            <span class="skill-tag">Postman</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Excel</span>
-                            <span class="skill-tag">Cointab</span>
-                            <span class="skill-tag">VS Code</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-card">
-                        <h3>🔄 Methodologies</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Agile/Scrum</span>
-                            <span class="skill-tag">Waterfall</span>
-                            <span class="skill-tag">RUP</span>
-                            <span class="skill-tag">Kanban</span>
-                            <span class="skill-tag">Sprint Planning</span>
-                            <span class="skill-tag">Backlog Management</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-card">
-                        <h3>💻 Technical</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">React Native</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">API Testing</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Database Design</span>
-                            <span class="skill-tag">AI/ML Integration</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education & Research -->
-        <section style="background: var(--bg-light);">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Education & Research</h2>
-                    <p class="section-description">
-                        Academic foundation in ICT with specialized knowledge in Business Analysis, Requirements
-                        Engineering, and AI.
-                    </p>
-                </div>
-
+        
                 <div class="work-grid">
-                    <div class="work-card" style="grid-column: span 2;">
-                        <div class="work-icon">🎓</div>
-                        <span class="work-tag">2019 - 2025</span>
-                        <h3>Bachelor of ICT (Hons) - Information & Communication Technology</h3>
-                        <div class="timeline-company" style="margin-bottom: 16px;">University of Jaffna, Sri Lanka</div>
-                        <p style="margin-bottom: 16px;">Comprehensive curriculum covering business analysis fundamentals
-                            and technical implementation:</p>
-                        <div
-                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-                            <div
-                                style="background: var(--bg-light); padding: 12px; border-radius: 8px; border: 1px solid var(--border);">
-                                <strong style="color: var(--purple);">Business Analysis</strong>
-                                <div style="font-size: 0.85rem; color: var(--gray); margin-top: 4px;">Requirements
-                                    Engineering, Strategic Planning</div>
-                            </div>
-                            <div
-                                style="background: var(--bg-light); padding: 12px; border-radius: 8px; border: 1px solid var(--border);">
-                                <strong style="color: var(--purple);">Development</strong>
-                                <div style="font-size: 0.85rem; color: var(--gray); margin-top: 4px;">Software
-                                    Development Models, Applications & Websites</div>
-                            </div>
-                            <div
-                                style="background: var(--bg-light); padding: 12px; border-radius: 8px; border: 1px solid var(--border);">
-                                <strong style="color: var(--purple);">Data & AI</strong>
-                                <div style="font-size: 0.85rem; color: var(--gray); margin-top: 4px;">Data Analytics, AI
-                                    Knowledge</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="work-card" style="border: 2px solid var(--purple);">
-                        <div class="work-icon">🔬</div>
-                        <span class="work-tag">Research</span>
-                        <h3>Mango Quality Detection Using AI</h3>
-                        <p style="margin-bottom: 12px;"><strong style="color: var(--purple);">Selected for RCAICT 2025
-                                Conference</strong></p>
-                        <p>Advanced research combining computer vision and data visualization for agricultural quality
-                            assessment:</p>
+                    <!-- MyComplaint Project -->
+                    <div class="work-card">
+                        <div class="work-icon">📱</div>
+                        <span class="work-tag">Mar 2024 - May 2025</span>
+                        <h3>MyComplaint - Employee Complaint Management</h3>
+                        <p><strong>Role:</strong> BA, Database Designer & Mobile Developer</p>
+                        <p>Three-tier complaint management system with multimedia support (video, audio, image, location),
+                            anonymous submissions, and real-time notifications.</p>
+        
                         <ul class="work-list">
-                            <li>AI-powered quality detection model</li>
-                            <li>Data visualization dashboard</li>
-                            <li>Practical application in agriculture sector</li>
-                            <li>Conference presentation ready</li>
+                            <li>Designed complete database architecture</li>
+                            <li>Developed React Native app (iOS & Android)</li>
+                            <li>Anonymous complaint with privacy protection</li>
+                            <li>92% multimedia upload success rate</li>
+                            <li>Role-based access control (3 tiers)</li>
                         </ul>
+        
+                        <!-- Documents -->
+                        <div class="doc-links">
+                            <a href="Files/Docs/Complaint system/case study/Case study.pdf" class="doc-link" download>
+                                <span class="doc-icon">📄</span>
+                                Case Study
+                            </a>
+                            <a href="Files/Docs/Complaint system/user stories & process flow/User stories.pdf" class="doc-link" download>
+                                <span class="doc-icon">📋</span>
+                                Use Stories & Process flow
+                            </a>
+                            <a href="Files/Docs/Complaint system/app screenshots/App screenshots.pdf" class="doc-link" download>
+                                <span class="doc-icon">📋</span>
+                                App Screenshots
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Key Projects -->
-        <section id="projects">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-description">
-                        End-to-end project delivery demonstrating business analysis, technical implementation, and
-                        measurable outcomes.
-                    </p>
-                </div>
-
-                <div class="work-grid">
+        
+                    <!-- Indoor Games Project -->
+                    <div class="work-card">
+                        <div class="work-icon">🏸</div>
+                        <span class="work-tag">UI/UX Design & BA</span>
+                        <h3>Indoor Games Court Booking</h3>
+                        <p><strong>Role:</strong> BA, UI/UX Designer & Database Designer</p>
+                        <p>Multi-sport booking platform with membership tiers, real-time availability, doubles matchmaking, and
+                            news feed.</p>
+        
+                        <ul class="work-list">
+                            <li>Designed 10+ UI screens (Figma)</li>
+                            <li>Complete database schema for booking</li>
+                            <li>3-tier membership (Basic/Medium/Premium)</li>
+                            <li>Color scheme: Green/Blue/Purple/Yellow</li>
+                            <li>Delivered client presentation & sample app</li>
+                        </ul>
+        
+                        <!-- Documents -->
+                        <div class="doc-links">
+                            <a href="Files/Docs/Court booking/backend structure/backend.pdf" class="doc-link" download>
+                                <span class="doc-icon">📄</span>
+                                Backend Structure
+                            </a>
+                            <a href="Files/Docs/Court booking/uiux specifications/uiux.pdf" class="doc-link" download>
+                                <span class="doc-icon">🎨</span>
+                                UI/UX Specification
+                            </a>
+                            <a href="documents/indoor_games_uiux_spec.pdf" class="doc-link" download>
+                                <span class="doc-icon">📄</span>
+                                case Study
+                            </a>
+                            <a href="documents/indoor_games_uiux_spec.pdf" class="doc-link" download>
+                                <span class="doc-icon">📋</span>
+                                Screenshots
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Bootble Fitness -->
                     <div class="work-card">
                         <div class="work-icon">🏋️</div>
                         <span class="work-tag">Sep 2024 - Jul 2025</span>
-                        <h3>Bootble - Fitness Mobile & Web App</h3>
-                        <p>Comprehensive BA engagement for AI-powered fitness platform with international client.</p>
+                        <h3>AI Fitness Platform</h3>
+                        <p><strong>Role:</strong> Business Analyst & Mobile Developer</p>
+                        <p>AI-powered fitness platform with device integration, vital signs tracking, and meditation features.
+                        </p>
+        
                         <ul class="work-list">
-                            <li>Requirements gathering & client communication</li>
-                            <li>AI feature coordination (user tracking & coaching)</li>
-                            <li>Development team coordination</li>
-                            <li>API validation in Postman</li>
-                            <li>On-schedule delivery</li>
+                            <li>Managed client communications & requirements</li>
+                            <li>Coordinated AI feature development</li>
+                            <li>Integrated device APIs (Apple Health, Google Fit)</li>
+                            <li>Validated 30+ API endpoints in Postman</li>
+                            <li>Delivered AI features on schedule</li>
                         </ul>
-                        <a href="#" class="work-link">View Case Study →</a>
+        
+                        <div class="doc-links">
+                            <a href="Files/Docs/Fitness app/screenshots/screenshots.pdf" class="doc-link" download>
+                                <span class="doc-icon">📋</span>
+                                Screenshots
+                            </a>
+                            <a href="Files/Docs/Fitness app/API documentation/api.pdf" class="doc-link" download>
+                                <span class="doc-icon">📋</span>
+                                API Documentation
+                            </a>
+                            <a href="Files/Docs/Fitness app/process flow chart/process flow.pdf" class="doc-link" download>
+                                <span class="doc-icon">📋</span>
+                                Process Flow Chart
+                            </a>
+                            <a href="Files/Docs/Fitness app/SRS/srs.pdf" class="doc-link" download>
+                                <span class="doc-icon">📋</span>
+                                SRS Document
+                            </a>
+                        </div>
                     </div>
-
+        
+                    <!-- AI Healthcare App -->
+                    <div class="work-card">
+                        <div class="work-icon">🤖</div>
+                        <span class="work-tag">Jul 2023 - Dec 2023</span>
+                        <h3>AI Healthcare Mobile App</h3>
+                        <p><strong>Role:</strong> BA & Mobile Developer</p>
+                        <p>Transcript analysis and vital signs monitoring achieving 92% accuracy in health metrics estimation.
+                        </p>
+        
+                        <ul class="work-list">
+                            <li>Developed UI components (React Native)</li>
+                            <li>Integrated pre-trained AI transcript model</li>
+                            <li>Face recognition for vital signs</li>
+                            <li>92% accuracy (pulse, O2, blood pressure)</li>
+                            <li>Delivered functional APKs to client</li>
+                        </ul>
+        
+                        <div class="doc-links">
+                            <a href="Files/Docs/AI integrated fitness app/screenshots/screenshots.pdf" class="doc-link" download>
+                                <span class="doc-icon">📄</span>
+                                Screenshots
+                            </a>
+                            <a href="Files/Docs/AI integrated fitness app/system arc & us/system arc.pdf" class="doc-link" download>
+                                <span class="doc-icon">📄</span>
+                                System Architecture & Use Cases
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Thinakkural Website -->
                     <div class="work-card">
                         <div class="work-icon">📰</div>
                         <span class="work-tag">Mar 2025 - Jul 2025</span>
-                        <h3>Thinakkural Website Revamp</h3>
-                        <p>Digital transformation project improving delivery efficiency through structured BA approach.
-                        </p>
+                        <h3>AAA Media Publication Website Revamp</h3>
+                        <p><strong>Role:</strong> Business Analyst & Coordinator</p>
+                        <p>Digital transformation project improving delivery efficiency through structured BA approach.</p>
+        
                         <ul class="work-list">
-                            <li>Requirement gathering & issue resolution</li>
+                            <li>Requirements gathering & issue resolution</li>
                             <li>SPOC for 25+ requirements</li>
-                            <li>Design-development-client coordination</li>
+                            <li>Coordinated design, dev, client teams</li>
                             <li>Roadmap alignment & feature prioritization</li>
                             <li>15% delivery efficiency improvement</li>
                         </ul>
-                        <a href="#" class="work-link">View Case Study →</a>
+        
+                        <div class="doc-links">
+                            <a href="Files/Docs/Online news portal/BRD/brd.pdf" class="doc-link" download>
+                                <span class="doc-icon">📋</span>
+                                BRD Document
+                            </a>
+                            <a href="Files/Docs/Online news portal/gap analysis, rtm/gap.pdf" class="doc-link" download>
+                                <span class="doc-icon">📋</span>
+                                Gap Analysis & RTM
+                            </a>
+                        </div>
                     </div>
-
+        
+                    <!-- Data Reconciliation -->
                     <div class="work-card">
                         <div class="work-icon">📊</div>
                         <span class="work-tag">Sep 2024 - Jan 2025</span>
                         <h3>Data Reconciliation Automation</h3>
-                        <p>Process optimization project achieving dramatic efficiency gains through automation.</p>
+                        <p><strong>Role:</strong> Data Analyst & Process Optimizer</p>
+                        <p>Process optimization achieving dramatic efficiency gains through automation and tool implementation.
+                        </p>
+        
                         <ul class="work-list">
-                            <li>Excel/CSV imports & SQL query optimization</li>
+                            <li>Excel/CSV imports & SQL optimization</li>
                             <li>Cointab reconciliation tool implementation</li>
-                            <li>15,000+ records automated</li>
+                            <li>Automated 15,000+ records</li>
                             <li>98% accuracy achieved</li>
                             <li>87% speed & accuracy improvement</li>
                         </ul>
-                        <a href="#" class="work-link">View Case Study →</a>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-icon">🤖</div>
-                        <span class="work-tag">Jul 2023 - Dec 2023</span>
-                        <h3>AI-Based Mobile App Development</h3>
-                        <p>Hands-on development project integrating pre-trained AI models for health monitoring.</p>
-                        <ul class="work-list">
-                            <li>UI component development (React Native)</li>
-                            <li>AI transcript model integration</li>
-                            <li>Face recognition for vital signs</li>
-                            <li>92% accuracy in vital sign estimation</li>
-                            <li>Functional APK delivery to clients</li>
-                        </ul>
-                        <a href="#" class="work-link">View Case Study →</a>
+        
+                        <div class="doc-links">
+                            <a href="Files/Docs/Data recon/Data flow & erd/data.pdf" class="doc-link" download>
+                                <span class="doc-icon">📊</span>
+                                Data Flow & ERD
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Achievements -->
-        <section style="background: var(--bg-light);">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Key Achievements</h2>
-                    <p class="section-description">
-                        Quantifiable business outcomes demonstrating impact across process optimization, quality
-                        assurance, and stakeholder management.
-                    </p>
-                </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-                    <div
-                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
-                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">20%</div>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Process Cycle Time Reduction
-                        </h3>
-                        <p style="opacity: 0.9; font-size: 0.95rem;">Optimized workflows through comprehensive
-                            As-Is/To-Be analysis and process mapping across multiple projects.</p>
-                    </div>
-
-                    <div
-                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
-                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">100%</div>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">UAT Defect Closure</h3>
-                        <p style="opacity: 0.9; font-size: 0.95rem;">Maintained perfect defect resolution record through
-                            meticulous UAT coordination and clear acceptance criteria.</p>
-                    </div>
-
-                    <div
-                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
-                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">87%</div>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Efficiency Improvement</h3>
-                        <p style="opacity: 0.9; font-size: 0.95rem;">Automated data reconciliation processes,
-                            dramatically improving speed and accuracy in report generation.</p>
-                    </div>
-
-                    <div
-                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
-                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">15%</div>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Rework Reduction</h3>
-                        <p style="opacity: 0.9; font-size: 0.95rem;">Reduced software rework through improved
-                            requirement traceability and stakeholder alignment practices.</p>
-                    </div>
-
-                    <div
-                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
-                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">80%</div>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Scope Change Reduction</h3>
-                        <p style="opacity: 0.9; font-size: 0.95rem;">Minimized scope changes through comprehensive gap
-                            and process analysis during requirements phase.</p>
-                    </div>
-
-                    <div
-                        style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
-                        <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">20+</div>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Projects Delivered</h3>
-                        <p style="opacity: 0.9; font-size: 0.95rem;">Successfully delivered 20+ product initiatives,
-                            aligning business objectives with technical implementation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- International Experience & Certifications -->
-        <section>
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">International Experience & Certifications</h2>
-                    <p class="section-description">
-                        Cross-cultural collaboration and professional development through continuous learning.
-                    </p>
-                </div>
-
-                <div class="work-grid">
-                    <div class="work-card">
-                        <div class="work-icon">🌍</div>
-                        <span class="work-tag">Global Clients</span>
-                        <h3>International Collaboration</h3>
-                        <p>Successfully collaborated with clients across multiple regions:</p>
-                        <ul class="work-list">
-                            <li>United Kingdom - Agile solution implementation</li>
-                            <li>Japan - Requirements documentation & analysis</li>
-                            <li>Malaysia - Process optimization projects</li>
-                            <li>Singapore - Digital transformation initiatives</li>
-                        </ul>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-icon">🎓</div>
-                        <span class="work-tag">Professional Development</span>
-                        <h3>Certifications</h3>
-                        <p>Continuous learning through industry-recognized certifications:</p>
-                        <ul class="work-list">
-                            <li>PMP (Project Management Professional) - Udemy</li>
-                            <li>CBAP Preparation</li>
-                            <li>IT Service Management (ITSM) Principles</li>
-                            <li>ITIL Foundation Level 4</li>
-                            <li>Diploma in IT with E-commerce</li>
-                            <li>Java Programming Fundamentals</li>
-                        </ul>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-icon">💬</div>
-                        <span class="work-tag">Communication</span>
-                        <h3>Language Proficiency</h3>
-                        <p>Multilingual communication enabling diverse stakeholder engagement:</p>
-                        <ul class="work-list">
-                            <li>English - Professional fluency</li>
-                            <li>Sinhala - Native</li>
-                            <li>Tamil - Native</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2025 Mishawrnilanthi Selvaraj. Technical Business Analyst based in Sri Lanka.</p>
-            <p style="margin-top: 8px;">Thalawathugoda, 10116, Sri Lanka</p>
+<!-- Experience -->
+<section id="experience">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-description">
+                Progressive career growth from Mobile Developer to Technical Business Analyst at Ysoft Solution.
+            </p>
         </div>
-    </footer>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jul 2025 – Present</div>
+                <h3>Business Analyst</h3>
+                <div class="timeline-company">555 Marketing | Sri Lanka</div>
+                <ul>
+                    <li>Translate business requirements into user stories and technical specifications, reducing development rework by 30%</li>
+                    <li>Facilitate stakeholder communications and coordinate requirements between marketing teams and developers for web
+                    development projects</li>
+                    <li>Apply UX principles to ensure user-focused solution design in web applications</li>
+                </ul>
+            </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">May 2024 – July 2025</div>
+                <h3>Technical Business Analyst</h3>
+                <div class="timeline-company">Ysoft Solution | Sri Lanka</div>
+                <ul>
+                    <li>Led requirements for 15+ software initiatives with comprehensive documentation (SRS,
+                        BRD, user stories)</li>
+                    <li>Collaborated with international clients (UK, Japan, Malaysia, Singapore) on Agile-driven
+                        solutions</li>
+                    <li>Created As-Is/To-Be process maps reducing cycle time by 20%</li>
+                    <li>Conducted competitor analysis reducing rework by 15%</li>
+                    <li>Coordinated UAT phases maintaining 100% defect closure record</li>
+                    <li>Supported sprint planning, backlog grooming, and demo reviews</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2024 – Apr 2024</div>
+                <h3>Data Reconciliation Analyst / Junior BA</h3>
+                <div class="timeline-company">Ysoft Solution | Sri Lanka</div>
+                <ul>
+                    <li>Managed requirements for 5+ data-driven web applications</li>
+                    <li>Built analytical dashboards processing 10,000+ records monthly (98% accuracy)</li>
+                    <li>Automated reconciliation improving speed and accuracy by 87%</li>
+                    <li>Conducted gap analysis reducing scope changes by 80%</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jul 2023 – Dec 2023</div>
+                <h3>Mobile Application Developer (Intern)</h3>
+                <div class="timeline-company">Ysoft Solution | Sri Lanka</div>
+                <ul>
+                    <li>Developed cross-platform mobile apps (React Native, Node.js, MongoDB)</li>
+                    <li>Integrated AI-based transcript model achieving 92% accuracy</li>
+                    <li>Assisted in UI/UX improvements and requirements gathering</li>
+                    <li>Supported demos and stakeholder feedback sessions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" style="background: var(--bg-light);">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-description">
+                Comprehensive skill set spanning business analysis, technical tools, and Agile methodologies
+                with proven success across international markets.
+            </p>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>📝 Business Analysis</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Requirements Elicitation</span>
+                    <span class="skill-tag">SRS/BRD/FRS</span>
+                    <span class="skill-tag">User Stories</span>
+                    <span class="skill-tag">Gap Analysis</span>
+                    <span class="skill-tag">Process Mapping</span>
+                    <span class="skill-tag">UAT</span>
+                    <span class="skill-tag">Traceability Matrix</span>
+                    <span class="skill-tag">Stakeholder Workshops</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>🛠️ Tools & Platforms</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Confluence</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Lucidchart</span>
+                    <span class="skill-tag">Draw.io</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">Cointab</span>
+                    <span class="skill-tag">VS Code</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>🔄 Methodologies</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Agile/Scrum</span>
+                    <span class="skill-tag">Waterfall</span>
+                    <span class="skill-tag">RUP</span>
+                    <span class="skill-tag">Kanban</span>
+                    <span class="skill-tag">Sprint Planning</span>
+                    <span class="skill-tag">Backlog Management</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>💻 Technical</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">React Native</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">API Testing</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Database Design</span>
+                    <span class="skill-tag">AI/ML Integration</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education & Research -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Education & Research</h2>
+            <p class="section-description">
+                Academic foundation in ICT with specialized knowledge in Business Analysis, Requirements
+                Engineering, and AI.
+            </p>
+        </div>
+
+        <div class="work-grid">
+            <div class="work-card" style="grid-column: span 2;">
+                <div class="work-icon">🎓</div>
+                <span class="work-tag">2019 - 2025</span>
+                <h3>Bachelor of ICT (Hons) - Information & Communication Technology</h3>
+                <div class="timeline-company" style="margin-bottom: 16px;">University of Jaffna, Sri Lanka</div>
+                <p style="margin-bottom: 16px;">Comprehensive curriculum covering business analysis fundamentals
+                    and technical implementation:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                    <div
+                        style="background: var(--bg-light); padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <strong style="color: var(--purple);">Business Analysis</strong>
+                        <div style="font-size: 0.85rem; color: var(--gray); margin-top: 4px;">Requirements
+                            Engineering, Strategic Planning</div>
+                    </div>
+                    <div
+                        style="background: var(--bg-light); padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <strong style="color: var(--purple);">Development</strong>
+                        <div style="font-size: 0.85rem; color: var(--gray); margin-top: 4px;">Software
+                            Development Models, Applications & Websites</div>
+                    </div>
+                    <div
+                        style="background: var(--bg-light); padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <strong style="color: var(--purple);">Data & AI</strong>
+                        <div style="font-size: 0.85rem; color: var(--gray); margin-top: 4px;">Data Analytics, AI
+                            Knowledge</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-card" style="border: 2px solid var(--purple);">
+                <div class="work-icon">🔬</div>
+                <span class="work-tag">Research</span>
+                <h3>Mango Quality Detection Using AI</h3>
+                <p style="margin-bottom: 12px;"><strong style="color: var(--purple);">Selected for RCAICT 2025 Conference</strong></p>
+                <p>Advanced research combining computer vision and data visualization for agricultural quality assessment:</p>
+                <ul class="work-list">
+                    <li>AI-powered quality detection model</li>
+                    <li>Data visualization dashboard</li>
+                    <li>Practical application in agriculture sector</li>
+                    <li>Conference presentation ready</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements -->
+<section style="background: var(--bg-light);">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Key Achievements</h2>
+            <p class="section-description">
+                Quantifiable business outcomes demonstrating impact across process optimization, quality
+                assurance, and stakeholder management.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            <div
+                style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">20%</div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Process Cycle Time Reduction
+                </h3>
+                <p style="opacity: 0.9; font-size: 0.95rem;">Optimized workflows through comprehensive
+                    As-Is/To-Be analysis and process mapping across multiple projects.</p>
+            </div>
+
+            <div
+                style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">100%</div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">UAT Defect Closure</h3>
+                <p style="opacity: 0.9; font-size: 0.95rem;">Maintained perfect defect resolution record through
+                    meticulous UAT coordination and clear acceptance criteria.</p>
+            </div>
+
+            <div
+                style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">87%</div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Efficiency Improvement</h3>
+                <p style="opacity: 0.9; font-size: 0.95rem;">Automated data reconciliation processes,
+                    dramatically improving speed and accuracy in report generation.</p>
+            </div>
+
+            <div
+                style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">15%</div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Rework Reduction</h3>
+                <p style="opacity: 0.9; font-size: 0.95rem;">Reduced software rework through improved
+                    requirement traceability and stakeholder alignment practices.</p>
+            </div>
+
+            <div
+                style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">80%</div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Scope Change Reduction</h3>
+                <p style="opacity: 0.9; font-size: 0.95rem;">Minimized scope changes through comprehensive gap
+                    and process analysis during requirements phase.</p>
+            </div>
+
+            <div
+                style="background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%); padding: 32px; border-radius: 12px; color: white;">
+                <div style="font-size: 3rem; font-weight: 700; margin-bottom: 8px;">20+</div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: white;">Projects Delivered</h3>
+                <p style="opacity: 0.9; font-size: 0.95rem;">Successfully delivered 20+ product initiatives,
+                    aligning business objectives with technical implementation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- International Experience & Certifications -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">International Experience & Certifications</h2>
+            <p class="section-description">
+                Cross-cultural collaboration and professional development through continuous learning.
+            </p>
+        </div>
+
+        <div class="work-grid">
+            <div class="work-card">
+                <div class="work-icon">🌍</div>
+                <span class="work-tag">Global Clients</span>
+                <h3>International Collaboration</h3>
+                <p>Successfully collaborated with clients across multiple regions:</p>
+                <ul class="work-list">
+                    <li>United Kingdom - Agile solution implementation</li>
+                    <li>Japan - Requirements documentation & analysis</li>
+                    <li>Malaysia - Process optimization projects</li>
+                    <li>Singapore - Digital transformation initiatives</li>
+                </ul>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">🎓</div>
+                <span class="work-tag">Professional Development</span>
+                <h3>Certifications</h3>
+                <p>Continuous learning through industry-recognized certifications:</p>
+                <ul class="work-list">
+                    <li>PMP (Project Management Professional) - Udemy</li>
+                    <li>CBAP Preparation</li>
+                    <li>IT Service Management (ITSM) Principles</li>
+                    <li>ITIL Foundation Level 4</li>
+                    <li>Diploma in IT with E-commerce</li>
+                    <li>Java Programming Fundamentals</li>
+                </ul>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">💬</div>
+                <span class="work-tag">Communication</span>
+                <h3>Language Proficiency</h3>
+                <p>Multilingual communication enabling diverse stakeholder engagement:</p>
+                <ul class="work-list">
+                    <li>English - Professional fluency</li>
+                    <li>Sinhala - Native</li>
+                    <li>Tamil - Native</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>© 2025 Mishawrnilanthi Selvaraj. Technical Business Analyst based in Sri Lanka.</p>
+        <p style="margin-top: 8px;">Thalawathugoda, 10116, Sri Lanka</p>
+    </div>
+</footer>
 </body>
 
 </html>
